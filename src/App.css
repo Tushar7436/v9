@@ -1,6 +1,4 @@
 #tsparticles {
-    position: absolute;
-    width: 100vh;
-    height: 80vh;
-    z-index: -1;
+    overflow-x: hidden;
 }
+

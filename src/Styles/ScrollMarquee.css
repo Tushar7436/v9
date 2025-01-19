@@ -1,0 +1,59 @@
+.Scroll-marquee {
+    width: 100%;
+    position: relative;
+    height:650px;
+    padding-bottom: 15vh;
+    overflow: hidden;
+    background-color: #000;
+    padding-top:15vh;
+    z-index:10;
+  }
+  
+  .Scroll-marquee .item {
+    width: 480px;
+    height: 359px;
+    position: absolute;
+    box-shadow: 0 4px 30px rgba(148, 145, 145, 0.326); /* Soft shadow */
+    backdrop-filter: blur(30px); /* Frosted blur effect */
+    -webkit-backdrop-filter: blur(30px); /* For Safari support */
+    background: rgba(133, 129, 129, 0.114); /* Whiter, semi-transparent background */
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    font-family:"Inter Tight", "Inter Tight Placeholder", sans-serif;
+    border-radius: 12px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: max(calc(200px * 8), 100%);
+    animation-name: scrollLeft;
+    animation-duration: 150s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  .Scroll-marquee .item1 {
+    animation-delay: calc(150s / 5 * (5 - 1) * -1);
+  }
+  
+  .Scroll-marquee .item2 {
+    animation-delay: calc(150s / 5 * (5 - 2) * -1);
+  }
+  
+  .Scroll-marquee .item3 {
+    animation-delay: calc(150s / 5 * (5 - 3) * -1);
+  }
+  
+  .Scroll-marquee .item4 {
+    animation-delay: calc(150s / 5 * (5 - 4) * -1);
+  }
+  
+  .Scroll-marquee .item5 {
+    animation-delay: calc(150s / 5 * (5 - 5) * -1);
+  }
+
+  @keyframes scrollLeft {
+    to {
+      left: -1030px;
+    }
+  }
+  
+  

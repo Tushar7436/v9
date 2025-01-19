@@ -1,21 +1,18 @@
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { useEffect, useMemo, useState } from "react";
-import { loadSlim } from "@tsparticles/slim"; // Load only the necessary slim package
+import { loadSlim } from "@tsparticles/slim";
 
 const ParticlesComponent = (props) => {
   const [init, setInit] = useState(false);
 
-  // This effect initializes the particles engine once
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      // Load only the needed modules to reduce bundle size
       await loadSlim(engine);
     }).then(() => {
       setInit(true);
     });
   }, []);
 
-  // Callback for when particles have successfully loaded
   const particlesLoaded = (container) => {
     console.log("Particles container loaded:", container);
   };
@@ -27,7 +24,7 @@ const ParticlesComponent = (props) => {
           value: "#000000",
         },
       },
-      fpsLimit: 120,
+      fpsLimit: 30,
       interactivity: {
         events: {
           onClick: {
@@ -74,7 +71,7 @@ const ParticlesComponent = (props) => {
           density: {
             enable: true,
           },
-          value: 150,
+          value: 90,
         },
         opacity: {
           value: 1.0,
@@ -92,11 +89,17 @@ const ParticlesComponent = (props) => {
   );
 
   return (
-    <Particles 
-      id={props.id || "tsparticles"} 
-      init={(engine) => initParticlesEngine(engine)} 
-      loaded={particlesLoaded} 
-      options={options} 
+    <Particles
+      id={props.id || "tsparticles"}
+      init={(engine) => initParticlesEngine(engine)}
+      loaded={particlesLoaded}
+      options={options}
+      style={{
+        position: "absolute",
+        width: "100%",
+        height: "100%",
+        zIndex: -10,
+      }}
     />
   );
 };

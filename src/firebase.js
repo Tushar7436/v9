@@ -1,8 +1,8 @@
 // src/firebase.js
 import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore'; // If using Firestore
-// import { getDatabase } from 'firebase/database'; // If using Realtime Database
+import { getAnalytics } from "firebase/analytics";
+import { createUserWithEmailAndPassword,signInWithEmailAndPassword, getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore'; 
 
 const firebaseConfig = {
     apiKey: "AIzaSyBtQb2_ttnuFUSIgwA_qgTF9zChHBe-VB4",
@@ -15,7 +15,10 @@ const firebaseConfig = {
     measurementId: "G-KJ68QVR1VC"
   };
 const app = initializeApp(firebaseConfig);
+const googleProvider = new GoogleAuthProvider();
+const auth = getAuth(app);
+const db = getFirestore(app); 
 
-export const auth = getAuth(app);
-export const db = getFirestore(app); 
+export const analytics = getAnalytics(app);
+export { createUserWithEmailAndPassword, signInWithEmailAndPassword, googleProvider, auth,signInWithPopup, db };
 export default app;

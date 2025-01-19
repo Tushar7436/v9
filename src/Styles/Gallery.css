@@ -1,0 +1,130 @@
+
+.Gallery {
+    position: relative;
+    padding-top: 10vh;
+    margin: 20vh 10px 0vh 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+.Gallery-heading {
+    display: flex;
+    justify-content: center;
+    text-align:center;
+    z-index: 10;
+    word-spacing: -4px;
+    font-size: 50px;
+    font-weight: 200;
+    margin-bottom: 5vh;
+    background: linear-gradient(
+        to right,
+        rgb(236, 229, 229),
+        rgba(17, 226, 107, 0.867)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.Gallery-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%; 
+    max-width: 1250px;
+    height: auto; 
+    aspect-ratio: 5/3;
+    overflow: hidden; 
+    margin-bottom: 5vh;
+}
+
+.Gallery-wrapper {
+    display: flex;
+    width: 100%;
+    animation: img-scroll 12s infinite ease-in-out; 
+}
+
+.Gallery-wrapper img {
+    height: 100%; 
+    width: auto;
+    object-fit: cover; 
+}
+
+@keyframes img-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(0);
+    }
+    30% {
+        transform: translateX(-100%);
+    }
+    55% {
+        transform: translateX(-100%);
+    }
+    60% {
+        transform: translateX(-200%);
+    }
+    85% {
+        transform: translateX(-200%);
+    }
+    90% {
+        transform: translateX(-300%);
+    }
+    100% {
+        transform: translateX(-300%);
+    }
+}
+
+/* Responsive Breakpoints */
+@media (min-width: 1200px) {
+    .Gallery-heading {
+        font-size: 50px;
+        text-align: center; 
+    }
+    .Gallery-container {
+        width: 125vmin;
+        height: 80vmin;
+    }
+}
+
+/* For tablets and medium-sized screens */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .Gallery-heading {
+        font-size: 40px;
+        text-align: center; 
+    }
+    .Gallery-container {
+        width: 95%; 
+        max-width: 1000px;
+    }
+}
+/* For screens less than 500px */
+@media (max-width: 500px) {
+    .Gallery {
+        padding: 5vh 20px;
+    }
+
+    .Gallery-heading {
+        font-size: 24px; 
+        text-align: center; 
+        margin-bottom: 3vh; 
+    }
+
+    .Gallery-container {
+        width: 100%; 
+        aspect-ratio: 4/3; 
+    }
+
+    .Gallery-wrapper {
+        animation: img-scroll 14s infinite ease-in-out; 
+    }
+
+    .Gallery-wrapper img {
+        height: 100%; 
+        width: auto;
+    }
+}
