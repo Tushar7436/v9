@@ -8,7 +8,6 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import Navbar from './components/Navbar.jsx';
 import Signup from './pages/Signup.jsx'
 import { Team } from './pages/Team.jsx';
 import LoginPage  from './pages/Login.jsx';
@@ -18,11 +17,9 @@ import { Events } from './pages/Events.jsx';
 import { checkOverflow } from "./debugSize";
 import NotFound from "./pages/PageNotFound.jsx"
 import { Toaster } from 'sonner';
-import AuthContext from "./ProtectedRoutes/AuthContext.jsx";
 import AdminDashboard from "./pages/Dashboard/AdminDashboard.jsx"
 import PartnerDashboard from "./pages/Dashboard/PartnerDashboard.jsx"
 import UserDashboard from "./pages/Dashboard/UserDashboard.jsx"
-
 
 checkOverflow();
 
@@ -45,7 +42,6 @@ const router = createBrowserRouter([
     path: "/About",
     element: 
     <div>
-      <Navbar/>
       <AboutPage/>
     </div>,
   },
@@ -53,7 +49,6 @@ const router = createBrowserRouter([
     path: "/Team",
     element: 
     <div>
-      <Navbar/>
       <Team/>
     </div>,
   },   
@@ -86,18 +81,18 @@ const router = createBrowserRouter([
     path: "*",
     element: <NotFound />,
   },
-    {
-      path: "/AdminDashboard",
-      element: <AdminDashboard/>
-    },
-    {
-      path: "/PartnerDashboard",
-      element: <PartnerDashboard/>
-    },
-    {
-      path: "/UserDashboard",
-      element: <UserDashboard/>
-    },
+  {
+    path: "/AdminDashboard",
+    element: <AdminDashboard />,
+  },
+  {
+    path: "UserDashboard",
+    element: <UserDashboard />,
+  },
+  {
+    path: "PartnerDashboard",
+    element: <PartnerDashboard />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
