@@ -17,9 +17,9 @@ import { Events } from './pages/Events.jsx';
 import { checkOverflow } from "./debugSize";
 import NotFound from "./pages/PageNotFound.jsx"
 import { Toaster } from 'sonner';
-import AdminDashboard from "./pages/Dashboard/AdminDashboard.jsx"
-import PartnerDashboard from "./pages/Dashboard/PartnerDashboard.jsx"
-import UserDashboard from "./pages/Dashboard/UserDashboard.jsx"
+import AdminDashboard from "./pages/Dashboard/Admin/AdminDashboard.jsx"
+import PartnerDashboard from "./pages/Dashboard/Partner/PartnerDashboard.jsx"
+import UserDashboard from "./pages/Dashboard/User/UserDashboard.jsx"
 
 checkOverflow();
 
